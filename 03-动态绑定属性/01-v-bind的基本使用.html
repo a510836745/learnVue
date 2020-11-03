@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--错误写法-->
+    <!--<img src="{{imgUrl}}">-->
+
+    <!--正确写法-->
+    <img v-bind:src = "imgUrl">
+    <a v-bind:href = "url">vue.api</a>
+
+    <!--语法糖-->
+    <img :src="imgUrl">
+    <a :href="url">vue.api</a>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    let hhh = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue',
+            imgUrl: 'https://cn.vuejs.org/images/logo.png',
+            url: 'https://cn.vuejs.org/v2/api/index.html#v-bind'
+        },
+    })
+</script>
+</body>
+</html>
