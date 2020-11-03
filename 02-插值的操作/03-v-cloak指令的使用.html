@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+
+    <!--
+    在vue解析之前 div中有一个属性v-cloak
+    在vue解析之后 div中没有一个属性v-cloak
+    所以可以在对在vue解析前 需操作的元素进行样式操作
+    -->
+    <h2 v-cloak>{{message}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    //模拟一个出现的时间延迟
+    // 这种情况下div会先显示{{message}} 1秒后显示hello vue
+    setTimeout(function () {
+        let hhh = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue'
+            },
+        })
+    },1000)
+
+</script>
+</body>
+</html>

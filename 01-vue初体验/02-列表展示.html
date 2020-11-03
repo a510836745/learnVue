@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="hhh">
+    <ul>
+        <li v-for="item in name">{{item}}</li>
+    </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+     let hhh = new Vue({
+         el:'#hhh',
+         data:{
+             name:['jack','lucy','leslie','lee']
+         }
+
+    })
+</script>
+</body>
+</html>
